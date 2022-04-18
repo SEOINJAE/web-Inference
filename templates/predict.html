@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2 id="ajax">Hello</h2>
+        <button onclick=test_ajax()>Ajax</button>
+        <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+        <script>
+            function test_ajax(){
+                $.ajax({
+                   type: 'POST',
+                   url: '/inference',
+                   success: function(data){
+                      $("#ajax").html(data);
+                    },
+                    error: function(msg) {
+                        console.log("error");
+                    }
+
+               });
+            }
+        </script>
+    </body>
+</html>
